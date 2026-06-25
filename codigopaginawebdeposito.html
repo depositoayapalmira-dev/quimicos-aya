@@ -1,0 +1,321 @@
+<!DOCTYPE ht<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depósito Aya | Soluciones Químicas Profesionales</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- BRANDING REGLA 60-30-10 & TIPOGRAFÍA --- */
+        :root {
+            /* 60% Dominante: Azul profundo industrial */
+            --primary: #102A43; 
+            
+            /* 30% Estructural: Gris claro limpio */
+            --bg-light: #E4E7EB; 
+            
+            /* 10% Acento: Verde tecnológico de acción */
+            --accent: #0EBE6A;  
+
+            /* Variaciones de texto y estructura */
+            --text-dark: #102A43;  
+            --text-light: #E4E7EB; 
+            --max-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* --- CONFIGURACIÓN BASE DE TEXTO TÉCNICO --- */
+        body {
+            background-color: var(--bg-light); /* 30% Estructural */
+            color: var(--text-dark);
+            font-family: 'Roboto', sans-serif; /* Texto técnico base */
+            font-weight: 400; /* Variante Regular */
+            line-height: 1.6; /* Interlineado controlado anti-colapso */
+        }
+
+        /* --- ENCABEZADOS INDUSTRIALES (MONTSERRAT) --- */
+        h1, h2, h3, .logo {
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase; /* Aumenta el carácter industrial y robusto */
+            letter-spacing: -0.5px;
+        }
+
+        /* --- HEADER & NAVEGACIÓN (60% Dominante) --- */
+        header {
+            background-color: var(--primary);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(16, 42, 67, 0.15);
+        }
+
+        .nav-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            color: var(--text-light);
+            font-size: 1.4rem;
+            font-weight: 900; /* Variante Black: Máximo peso visual */
+            letter-spacing: 1px;
+        }
+
+        .logo span { color: var(--accent); } 
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700; /* Variante Bold */
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover { color: var(--accent); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(rgba(16, 42, 67, 0.9), rgba(16, 42, 67, 0.95)), url('https://images.unsplash.com/photo-1532187863486-abf9d39d6618?q=80&w=1200') no-repeat center center/cover;
+            height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-light);
+            padding: 0 2rem;
+            margin-top: 60px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.2rem;
+            font-weight: 900; /* Variante Black */
+            line-height: 1.1;
+            margin-bottom: 1.2rem;
+            color: white;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #cbd5e1;
+        }
+
+        /* --- SECCIONES GENERALES --- */
+        .section {
+            padding: 5rem 2rem;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 900; /* Variante Black */
+            margin-bottom: 3rem;
+            position: relative;
+            color: var(--primary);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 5px;
+            background-color: var(--accent); 
+            margin: 0.6rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* --- CUADRÍCULA DE LÍNEAS DE PRODUCTO --- */
+        .grid-products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 4px; /* Bordes más rectos para mantener el look industrial */
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(16, 42, 67, 0.06);
+            transition: transform 0.3s;
+            border-top: 5px solid var(--accent); 
+        }
+
+        .card:hover { transform: translateY(-5px); }
+
+        .card-body { padding: 2.5rem 2rem; }
+
+        .card-body h3 { 
+            font-size: 1.25rem;
+            font-weight: 700; /* Variante Bold */
+            margin-bottom: 1rem; 
+            color: var(--primary); 
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* --- TEXTOS TÉCNICOS Y ADVERTENCIAS (ROBOTO GENERAL) --- */
+        .text-tecnico {
+            font-size: 0.9rem;
+            font-weight: 400; /* Regular */
+            color: #486581;
+            line-height: 1.65; /* Interlineado extra controlado para evitar colapso visual */
+        }
+
+        .destacado-medio {
+            font-weight: 500; /* Variante Medium de Roboto para resaltar sin saturar */
+            color: var(--primary);
+        }
+
+        /* --- BOTÓN WHATSAPP (10% ACENTO) --- */
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--accent); 
+            color: white;
+            padding: 0.9rem 2rem;
+            border-radius: 4px; /* Diseño rectangular/robusto alineado al sector */
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 12px rgba(14, 190, 106, 0.25);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #0b9e58; 
+            transform: scale(1.02);
+        }
+
+        .cta-container { text-align: center; margin-top: 1rem; }
+
+        /* --- FOOTER (60% Dominante) --- */
+        footer {
+            background-color: var(--primary);
+            color: #9fb3c8;
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+            border-top: 3px solid var(--accent);
+        }
+
+        footer p {
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">Químicos<span>Aya</span></div>
+            <ul class="nav-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#lineas">Líneas</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Insumos Químicos de Alta Calidad</h1>
+            <p class="text-tecnico" style="color: #e4e7eb; font-size: 1.15rem;">Formulaciones profesionales, industriales y del hogar con los más altos estándares de rendimiento y seguridad.</p>
+            <a href="https://wa.me/573000000000?text=Hola,%20deseo%20solicitar%20el%20catálogo%20de%20productos" class="btn-whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i> Solicitar Catálogo
+            </a>
+        </div>
+    </section>
+
+    <section id="lineas" class="section">
+        <h2 class="section-title">Nuestras Líneas de Productos</h2>
+        <div class="grid-products">
+            
+            <div class="card">
+                <div class="card-body">
+                    <h3><i class="fas fa-industry"></i> Línea Industrial</h3>
+                    <p class="text-tecnico">Materias primas puras, tensioactivos y soluciones a granel para procesos de manufactura, optimización de recursos y limpieza pesada.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h3><i class="fas fa-car"></i> Línea Automotriz</h3>
+                    <p class="text-tecnico">Productos especializados para el mantenimiento vehicular: siliconas de alta concentración, desengrasantes profundos y champús activos.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h3><i class="fas fa-hand-sparkles"></i> Línea PRO</h3>
+                    <p class="text-tecnico">Fórmulas de alta concentración diseñadas rigurosamente para clientes institucionales, restaurantes y autolavados que exigen máxima eficiencia técnica.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contacto" class="section" style="background-color: white; border-radius: 4px; box-shadow: 0 4px 20px rgba(16,42,67,0.04);">
+        <div style="text-align: center; max-width: 650px; margin: 0 auto;">
+            <h2 class="section-title">¿Necesitas una formulación a medida?</h2>
+            <p class="text-tecnico" style="margin-bottom: 2rem; font-size: 1rem;">
+                Atendemos requerimientos especiales y distribución al por mayor. Garantizamos <span class="destacado-medio">dosificaciones seguras</span> y materias primas verificadas. Ponte en contacto con nuestra administración para asesoría inmediata.
+            </p>
+            <div class="cta-container">
+                <a href="https://wa.me/573165388523?text=Hola,%20me%20gustaría%20cotizar%20unos%20insumos%20químicos" class="btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Hablar con un Asesor
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p style="color: var(--text-light); font-family: 'Montserrat', sans-serif; font-weight: 700; letter-spacing: 0.5px;">&copy; 2026 Químicos Aya. Todos los derechos reservados.</p>
+        <p class="text-tecnico" style="font-size: 0.85rem; margin-top: 0.6rem; color: #829ab1;">Administración Central | Palmira, Valle del Cauca</p>
+    </footer>
+
+</body>
+</html>ml>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pen</title>
+  </head>
+  <body>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
